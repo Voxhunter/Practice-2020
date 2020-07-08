@@ -1,0 +1,11 @@
+create database Practice2020;
+\c practice2020;
+create table companys(comp_ID int primary key, comp_Name text);
+create table workers(work_ID int primary key, work_Name text, comp_ID int REFERENCES companys(comp_Id));
+insert into companys (comp_ID, comp_Name) values( 1, 'Gazprom');
+insert into companys (comp_ID, comp_Name) values( 2, 'Book24');
+insert into workers (work_ID, work_Name, comp_Id) values( 1, 'Sidorov V. A.', 2);
+insert into workers (work_ID, work_Name, comp_Id) values( 2, 'Petrov S. V.', 1);
+insert into workers (work_ID, work_Name, comp_Id) values( 3,  'Ivanov A. K.', 2);
+select * from companys;
+select * from workers;
